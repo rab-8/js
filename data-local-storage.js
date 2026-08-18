@@ -4,6 +4,7 @@ var emptyRow = "<tr><td colspan='10' class='text-center'> কোনো তথ্
       $('#tblData').on('click', '.btn-edit', function () {
         debugger;
         const regno = $(this).parent().parent().find(".txtRegNo").html();
+        const regno = $(this).parent().parent().find(".txtRationi").html();
         const rank = $(this).parent().parent().find(".txtRank").html();
         const name = $(this).parent().parent().find(".txtName").html();
         const workplace = $(this).parent().parent().find(".txtWorkplace").html();
@@ -16,6 +17,7 @@ var emptyRow = "<tr><td colspan='10' class='text-center'> কোনো তথ্
 
         const id = $(this).parent().parent().find(".txtRegNo").attr("data-id");
         $("#txtRegNo").val(regno);
+        $("#txtRationi").val(rationi);
         $("#txtRank").val(rank);
         $("#txtName").val(name);
         $("#txtWorkplace").val(workplace);
@@ -58,6 +60,7 @@ var emptyRow = "<tr><td colspan='10' class='text-center'> কোনো তথ্
     function clearForm() {
       debugger;
       $("#txtRegNo").val("");
+      $("#txtRationi").val("");
       $("#txtRank").val("");
       $("#txtName").val("");
       $("#txtWorkplace").val("");
@@ -89,6 +92,7 @@ var emptyRow = "<tr><td colspan='10' class='text-center'> কোনো তথ্
           let dynamicTR = "<tr>";
           dynamicTR = dynamicTR + "<td> " + index + "</td>";
           dynamicTR = dynamicTR + "<td class='txtRegNo'  data-id=" + element.id + ">" + element.regno + "</td>";
+          dynamicTR = dynamicTR + "<td class='txtRationi'  data-id=" + element.id + ">" + element.rationi + "</td>";
           dynamicTR = dynamicTR + "<td class='txtRank'  data-id=" + element.id + ">" + element.rank + "</td>";
           dynamicTR = dynamicTR + "<td class='txtName'  data-id=" + element.id + ">" + element.name + "</td>";
           dynamicTR = dynamicTR + "<td class='txtWorkplace'  data-id=" + element.id + ">" + element.workplace + "</td>";
@@ -116,6 +120,7 @@ var emptyRow = "<tr><td colspan='10' class='text-center'> কোনো তথ্
         const obj = {
           id: localArray.length + 1,
           regno: $("#txtRegNo").val(),
+          rationi: $("#txtRationi").val(),
           rank: $("#txtRank").val(),
           name: $("#txtName").val(),
           workplace: $("#txtWorkplace").val(),
@@ -132,6 +137,7 @@ var emptyRow = "<tr><td colspan='10' class='text-center'> কোনো তথ্
         const obj = {
           id: 1,
           regno: $("#txtRegNo").val(),
+          rationi: $("#txtRationi").val(),
           rank: $("#txtRank").val(),
           name: $("#txtName").val(),
           workplace: $("#txtWorkplace").val(),
@@ -153,6 +159,7 @@ var emptyRow = "<tr><td colspan='10' class='text-center'> কোনো তথ্
       let localArray = JSON.parse(localData);
       const oldRecord = localArray.find(m => m.id == $("#txtId").val());
       oldRecord.regno = $("#txtRegNo").val();
+      oldRecord.rationi = $("#txtRationi").val();
       oldRecord.rank = $("#txtRank").val();
       oldRecord.name = $("#txtName").val();
       oldRecord.workplace = $("#txtWorkplace").val();
