@@ -4,7 +4,7 @@ var emptyRow = "<tr><td colspan='10' class='text-center'> কোনো তথ্
       $('#tblData').on('click', '.btn-edit', function () {
         debugger;
         const regno = $(this).parent().parent().find(".txtRegNo").html();
-        const regno = $(this).parent().parent().find(".txtRationi").html();
+        const rationi = $(this).parent().parent().find(".txtRationi").html();
         const rank = $(this).parent().parent().find(".txtRank").html();
         const name = $(this).parent().parent().find(".txtName").html();
         const workplace = $(this).parent().parent().find(".txtWorkplace").html();
